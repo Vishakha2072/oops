@@ -1,0 +1,36 @@
+#include<iostream>
+
+using namespace std;
+
+class Person {
+
+    // Complete the class
+    private:
+    string name;
+    int age;
+    public:
+    void setValue(string x,int y){
+        name=x;
+        age=y;       
+    }
+    string getName(){
+        return name;
+    }
+    int getAge(){
+        return age;
+    }
+
+};
+
+int main() {
+
+    //Write your code here
+    Person p;
+    string a;
+    int b;
+    cin>>a>>b;
+    p.setValue(a,b);
+    cout<<"The name of the person is "<<p.getName()<<" "<<"and the age is"<<" "<<p.getAge()<<"."<<endl;
+
+    return 0;
+}
