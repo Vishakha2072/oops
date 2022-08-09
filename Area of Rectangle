@@ -1,0 +1,22 @@
+class Rectangle {
+    // Write your code here.
+     public:
+
+     int length;
+
+     int breadth;
+
+     
+
+     int getArea()
+
+     {
+
+         return length*breadth;
+
+     }
+
+     
+
+   
+};
