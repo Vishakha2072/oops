@@ -1,0 +1,59 @@
+#include<iostream>
+
+#include<algorithm>
+
+using namespace std;
+
+class Fraction {
+    public:
+    int nume;    //numerator
+    int deno;    //denominator
+    Fraction(int n,int d){
+        nume=n;
+        deno=d;
+    }
+    void add(Fraction f){
+        nume=(nume*f.deno)+(f.nume*deno);
+        deno=deno*f.deno;
+    }
+    void multiply(Fraction f){
+        nume=nume*f.nume;
+        deno=deno*f.deno;
+    }
+    void simplify(){
+        int GCD=__gcd(nume,deno);
+        nume=nume/GCD;
+        deno=deno/GCD;
+    }
+    void print(){
+        cout<<nume<<"/"<<deno<<endl;
+    }
+};
+
+int main() {
+   int numerator,denomenator;
+   cin >> numerator >> denomenator;
+   Fraction f(numerator,denomenator);
+   int N;
+   cin >> N;
+   int que,num,dem;
+   for (int i = 0; i < N; i++)
+   {
+       cin >> que >> num >> dem;
+       Fraction f1(num,dem);
+       switch (que)
+       {
+           case 1:  
+               f.add(f1);
+               f.simplify();
+               f.print();
+               break;
+           case 2:
+               f.multiply(f1);
+               f.simplify();
+               f.print();
+               break;
+       }
+   }
+    return 0;
+}
